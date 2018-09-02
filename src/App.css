@@ -1,28 +1,83 @@
+body{
+  background-image: url(notebook2.jpg);
+  background-size: cover;
+  background-position-y: 75px;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.heading{
+  font-family: "rig-solid-bold-fill",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #28272c;
+  text-align: center;
+  /* background-color: #fcf9f7; */
+  
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.inputbox{
+  height: 20px;
+  width: 275px;
+  margin: 10px;
+  font-family: balloon-urw, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  position: relative;
+  left: 50px;
+  background-color: #fcf9f7;
+
+}
+.button{
+  padding: 10px 15px;
+  font-family: mr-eaves-modern, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #e26559;
+  border: none;
+  border-radius: 15px;
+  position: relative;
+  left: 50px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.button:hover{
+  background-color: #cf6259;
 }
 
-.App-intro {
-  font-size: large;
+.button:active {
+  background-color: #852736;
+  transform: translateY(4px);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.listcontainer {
+  font-family: balloon-urw, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  list-style: none;
+  font-size: 35px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding-left: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: inherit;
+  text-align: left;
 }
+.listitem {
+  grid-column: 2 / 3;
+  
+}
+
+
+@import url("https://use.typekit.net/bns7mkn.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js");
