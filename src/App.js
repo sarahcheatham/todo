@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Todolist from './todolist'
+import List from './list'
 
 class App extends Component {
   
@@ -8,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Todolist/>
-        {/* <img /> */}
+        <List/>
       </div>
     );
   }

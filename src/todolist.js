@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
 export default class Todolist extends React.Component{
     state = {
         list: [],
         inputValue: '',
+        checked: false,
     };
 
     handleChange(e){
@@ -14,31 +16,50 @@ export default class Todolist extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        console.log(this.state.inputValue)
         const newList = this.state.list.slice();
         newList.push(this.state.inputValue);
-        console.log(newList);
         //take the input value, put it in the list
         this.setState({list: newList, inputValue: ''})
     }
 
+    removeItem = (item, index)=>{
+        const removedItem = this.state.list.slice();
+        removedItem.splice(index, 1);
+        this.setState({list: removedItem})
+    };
+
+    checkItem = (item, index)=>{ 
+        this.setState({checked: true})
+    };
+    
+    // styleItem = (e)=>{
+    //     const checkedItem = {checked: true};
+    //     const addStyle = {
+    //         textDecoration: 'line-through'
+    //     };
+    //     const listItem = this.state.list.slice();
+    //     if(checkedItem){
+    //         listItem.map((item, index)=>{
+    //             console.log([item.addStyle])
+    //         })
+    //     }
+    // };
+
     renderList(){
         return this.state.list.map((item, index)=>{
             if(item !== ''){
-                return <li className="listitem">
-                        {item}
-                </li>
-                 
+                return <li key={index} item={item} index={index} className="listitem">
+                    <label className="checkboxContainer">
+                        <input type="checkbox" className="checkbox" onChange={(e)=>{this.checkItem(item, index)}}/>
+                        <span className="checkmark"/>
+                    </label>
+                    {item}
+                    <button className="deletebtn" onClick={()=>{this.removeItem(item, index)}}>&times;</button>
+                </li> 
             } 
         })
     }
 
-    addDeleteLink(){
-        const listItems = this.state.newList;
-        for(let i = 0; i < listItems; i++){
-            console.log(listItems[i])
-        }
-    }
     render(){
         return (
             <div>
