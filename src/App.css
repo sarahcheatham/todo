@@ -77,6 +77,7 @@ body{
 .listitem {
   grid-column: 2 / 3;
   color: #19262b;
+  text-decoration: 'none';
 }
 
 .deletebtn{
@@ -86,21 +87,21 @@ body{
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: #fff;
+  color: #fcf9f7;
   background-color: #e26559;
   border: none;
   border-radius: 3px;
   position: relative;
   left: 15px;
-  bottom: 2px;
+  bottom: 3px;
 }
 
 .deletebtn:hover{
-  background-color: #c1144d;
+  color: #c1144d;
 }
 
 .deletebtn:active {
-  background-color: #852736;
+  color: #852736;
   transform: translateY(2px);
 }
 .checkboxContainer{

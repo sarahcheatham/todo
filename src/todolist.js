@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 export default class Todolist extends React.Component{
@@ -32,23 +33,18 @@ export default class Todolist extends React.Component{
         this.setState({checked: true})
     };
     
-    // styleItem = (e)=>{
-    //     const checkedItem = {checked: true};
-    //     const addStyle = {
-    //         textDecoration: 'line-through'
-    //     };
-    //     const listItem = this.state.list.slice();
-    //     if(checkedItem){
-    //         listItem.map((item, index)=>{
-    //             console.log([item.addStyle])
-    //         })
-    //     }
-    // };
+    styleItem = (item, index)=>{
+        const newItem = item.strike();
+        const newList = this.state.list.slice();
+        newList.splice(0, 1, newItem)
+        this.setState({list: newList})
+        
+    };
 
     renderList(){
         return this.state.list.map((item, index)=>{
             if(item !== ''){
-                return <li key={index} item={item} index={index} className="listitem">
+                return <li key={index} item={item} index={index} className="listitem" onChange={()=>{this.styleItem(item, index)}}>
                     <label className="checkboxContainer">
                         <input type="checkbox" className="checkbox" onChange={(e)=>{this.checkItem(item, index)}}/>
                         <span className="checkmark"/>
@@ -56,7 +52,7 @@ export default class Todolist extends React.Component{
                     {item}
                     <button className="deletebtn" onClick={()=>{this.removeItem(item, index)}}>&times;</button>
                 </li> 
-            } 
+            }
         })
     }
 
