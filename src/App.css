@@ -97,11 +97,12 @@ body{
 }
 
 .deletebtn:hover{
-  color: #c1144d;
+  background-color: #c1144d;
 }
 
 .deletebtn:active {
-  color: #852736;
+  color: #fcf9f7;
+  background-color: #852736;
   transform: translateY(2px);
 }
 .checkboxContainer{
