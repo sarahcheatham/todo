@@ -1,28 +1,163 @@
+body{
+  background-image: url(notebook2.jpg);
+  background-size: cover;
+  background-position-y: 72px;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.heading{
+  font-family: "rig-solid-bold-fill",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #19262b;
+  text-align: center;
+  /* background-color: #fcf9f7; */
+  
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.inputbox{
+  height: 20px;
+  width: 275px;
+  margin: 10px;
+  font-family: balloon-urw, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  position: relative;
+  left: 50px;
+  color: #19262b;
+  background-color: #fcf9f7;
+
+}
+.button{
+  padding: 10px 10px;
+  font-family: mr-eaves-modern, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #e26559;
+  border: none;
+  border-radius: 15px;
+  position: relative;
+  left: 50px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.button:hover{
+  background-color: #c1144d;
 }
 
-.App-intro {
-  font-size: large;
+.button:active {
+  background-color: #852736;
+  transform: translateY(4px);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.listcontainer {
+  font-family: balloon-urw, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  list-style: none;
+  font-size: 35px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding-left: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: inherit;
+  text-align: left;
 }
+.listitem {
+  grid-column: 2 / 3;
+  color: #19262b;
+  text-decoration: 'none';
+}
+
+.deletebtn{
+  font-family: mr-eaves-modern, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fcf9f7;
+  background-color: #e26559;
+  border: none;
+  border-radius: 3px;
+  position: relative;
+  left: 15px;
+  bottom: 3px;
+}
+
+.deletebtn:hover{
+  background-color: #c1144d;
+}
+
+.deletebtn:active {
+  color: #fcf9f7;
+  background-color: #852736;
+  transform: translateY(2px);
+}
+.checkboxContainer{
+  display: inline-block;
+  position: relative;
+  bottom: 10px;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  border: solid 1px #6b787c;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fcf9f7;
+  border: solid 1px #6b787c;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+  background-color: #80c1d8;
+  border: solid 1px #6b787c;
+}
+.checkmark:after {
+  content: " ";
+  position: absolute;
+  display: none;
+}
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkboxContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@import url("https://use.typekit.net/bns7mkn.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js");
