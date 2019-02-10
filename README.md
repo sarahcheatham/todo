@@ -18,5 +18,5 @@ Allows the user to create a to-do list, to mark off items that are completed and
 
 ### Screen Shot
  
-![screen shot](../src/todolistScreenShot.png "Screen Shot")
+![screen shot](./src/todolistScreenShot.png "Screen Shot")
 
