@@ -92,7 +92,7 @@ export default class Todolist extends React.Component{
             <div>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <h2 className="heading">To Do List:</h2>
-                    <div>List Items: {this.state.itemCount}</div>
+                    {/* <div>List Items: {this.state.itemCount}</div> */}
                     <div>
                         <input
                             value={this.state.inputValue} 
