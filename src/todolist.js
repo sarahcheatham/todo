@@ -6,6 +6,7 @@ export default class Todolist extends React.Component{
     state = {
         listObj: [],
         inputValue: '',
+        itemCount: 0
     };
 
     componentDidMount(){
@@ -22,13 +23,8 @@ export default class Todolist extends React.Component{
         e.preventDefault();
         const listObj = [...this.state.listObj];
         const newList = listObj.slice();
-        // const todoObj = {
-        //     "userId": 1,
-        //     "id": newList.length,
-        //     "title": this.state.inputValue,
-        //     "completed": false
-        // }
-        listObj.push({list : this.state.inputValue, checked: false});
+        
+        listObj.push({list : this.state.inputValue, checked: false, itemCount: this.state.itemCount++});
         //take the input value, put it in the list
         this.setState({ listObj, inputValue: ''})
     }
@@ -37,32 +33,13 @@ export default class Todolist extends React.Component{
         const listObj = [...this.state.listObj];
         listObj.splice(index, 1)
         this.setState({ listObj })
-        // const removedItem = this.state.list.slice();
-        // removedItem.splice(index, 1);
-        // this.setState({list: removedItem})
     };
 
     checkItem = item =>{ 
         const listObj = [...this.state.listObj];
         listObj[listObj.indexOf(item)].checked = !listObj[listObj.indexOf(item)].checked;
-        this.setState({ list: listObj });
-        // this.setState({checked: true})
-        // const styles = {
-        //     this.state.checked ? styles.crossOut : styles.listItem
-        // }
-        
+        this.setState({ list: listObj });  
     };
-    
-    // styleItem = (item, index)=>{
-    //     if({checked: true}){
-    //         const newItem = item.title;
-    //         console.log(newItem)
-    //         // const newList = this.state.list.slice();
-    //         // // console.log(Array.isArray(newList))
-    //         // newList.splice(0, 1, strikedItem)
-    //         // this.setState({list: newList})
-    //     }
-    // };
 
     renderList(){
         const styles = {
@@ -105,23 +82,17 @@ export default class Todolist extends React.Component{
                         </button>
                     </li>
                 );
-                // return<li key={index} item={item} index={index} className="listitem" onChange={(e)=>{this.styleItem(item, index)}}>
-                //     <label className="checkboxContainer">
-                //         <input type="checkbox" className="checkbox" onChange={(e)=>{this.checkItem(item, index)}}/>
-                //         <span className="checkmark"/>
-                //     </label>
-                //     {item.title}
-                //     <button className="deletebtn" onClick={()=>{this.removeItem(item, index)}}>&times;</button>
-                // </li> 
             }
         });
     }
 
     render(){
+        console.log(this.state.itemCount)
         return (
             <div>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <h2 className="heading">To Do List:</h2>
+                    <div>List Items: {this.state.itemCount}</div>
                     <div>
                         <input
                             value={this.state.inputValue} 

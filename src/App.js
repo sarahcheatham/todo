@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Todolist/>
-        <List/>
+        {/* <List/> */}
       </div>
     );
   }
